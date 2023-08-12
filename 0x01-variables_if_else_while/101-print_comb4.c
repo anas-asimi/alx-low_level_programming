@@ -1,43 +1,34 @@
 #include <stdio.h>
 
 /**
- * main - This is the function that is called at the program startup
+ * main - Prints all possible combinations of three different digits,
+ *        in ascending order, separated by a comma followed by a space.
  *
- * Description: The main function is the first function that is executed
- * in the program when the execution is started
- *
- * Return: Always 0 (int value)
+ * Return: Always 0.
  */
 int main(void)
 {
-  /*
-   * This is a program that prints all possible different combinations
-   * of three digits
-   */
-int i;
-int j;
-int k;
+	int x, y, z;
 
-for (i = 48; i < 58; i++)
-{
-for (j = 48; j < 58; j++)
-{
-for (k = 48; k < 58; k++)
-{
+	for (x = 0; x < 8; x++)
+	{
+		for (y = x + 1; y < 9; y++)
+		{
+			for (z = y + 1; z < 10; z++)
+			{
+				putchar((x % 10) + '0');
+				putchar((y % 10) + '0');
+				putchar((z % 10) + '0');
 
-if (i != j && i != k && k != j && i < j && j < k)
-{
-putchar(i);
-putchar(j);
-putchar(k);
-if (i == 55 && j == 56 && k == 57)
-continue;
-putchar(',');
-putchar(' ');
-}
-}
-}
-}
-putchar('\n');
-return (0);
+				if (x == 7 && y == 8 && z == 9)
+					continue;
+				putchar(',');
+				putchar(' ');
+			}
+		}
+	}
+
+	putchar('\n');
+
+	return (0);
 }
