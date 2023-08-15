@@ -26,10 +26,11 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if ((z / 10) == 0)
+				if (z >= 10)
 				{
-					_putchar(' ');
+					continue;
 				}
+				_putchar(' ');
 			}
 		}
 		_putchar('\n');
