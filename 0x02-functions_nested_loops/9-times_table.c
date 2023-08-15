@@ -26,6 +26,10 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar('\t');
+				if (z < 10)
+				{
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
