@@ -1,4 +1,8 @@
 {
 	"cmake.configureOnOpen": false,
-	"C_Cpp.errorSquiggles": "disabled"
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"*.ejs": "html",
+		"main.h": "c"
+	}
 }
