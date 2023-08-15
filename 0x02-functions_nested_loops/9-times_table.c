@@ -1,10 +1,7 @@
 #include "main.h"
 
 /**
- * jack_bauer - func that prints every minute of Jack Bauer's day,
- * starting from 00:00 to 23:59, min loop count mins, while hour loop counts
- * hours and resets mins
- * Return: 0
+ * times_table - prints the 9 times table, starting with 0
  */
 
 void times_table(void)
