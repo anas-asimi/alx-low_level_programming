@@ -16,10 +16,15 @@ void times_table(void)
 	{
 		for (y = 0; y < 10; y++)
 		{
-			_putchar(x * y + '0');
+			int z = x * y;
+			if (z > 10)
+			{
+				_putchar(z / 10 + '0');
+			}
+			_putchar(z % 10 + '0');
 			_putchar(',');
 			_putchar(' ');
-			if ((x * y) < 10)
+			if (z < 10)
 			{
 				_putchar(' ');
 			}
