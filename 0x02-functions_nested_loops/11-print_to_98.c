@@ -30,7 +30,7 @@ void print_to_98(int n)
 
 		if (x >= 100)
 		{
-			if (!isPositive)
+			if (x < 1000 && !isPositive)
 			{
 				_putchar('-');
 			}
@@ -39,7 +39,7 @@ void print_to_98(int n)
 
 		if (x >= 10)
 		{
-			if (!isPositive)
+			if (x < 100 && !isPositive)
 			{
 				_putchar('-');
 			}
