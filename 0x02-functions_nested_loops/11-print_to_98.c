@@ -36,10 +36,6 @@ void print_to_98(int n)
 			}
 			_putchar(first_digit + '0');
 		}
-		else
-		{
-			_putchar(' ');
-		}
 
 		if (x >= 10)
 		{
@@ -48,10 +44,6 @@ void print_to_98(int n)
 				_putchar('-');
 			}
 			_putchar(second_digit + '0');
-		}
-		else
-		{
-			_putchar(' ');
 		}
 
 		if (x < 10 && !isPositive)
