@@ -6,48 +6,13 @@
  */
 void print_to_98(int n)
 {
-	int x;
-	int first_digit;
-	int second_digit;
-	int third_digit;
-	int isPositive;
+	int count;
 
-	while (1)
-	{
-		isPositive = n >= 0;
-		if (isPositive)
-			x = n;
-		else
-			x = -n;
-		first_digit = (x / 100) % 10;
-		second_digit = (x / 10) % 10;
-		third_digit = (x / 1) % 10;
-		if (x >= 100)
-		{
-			if (x < 1000 && !isPositive)
-				_putchar('-');
-			_putchar(first_digit + '0');
-		}
-		if (x >= 10)
-		{
-			if (x < 100 && !isPositive)
-				_putchar('-');
-			_putchar(second_digit + '0');
-		}
-		if (x < 10 && !isPositive)
-			_putchar('-');
-		_putchar(third_digit + '0');
-		if (n == 98)
-			break;
-		else 
-		{
-			_putchar(',');
-			_putchar(' ');
-			if (n < 98)
-				n++;
-			if (n > 98)
-				n--;
-		}
-	}
-	_putchar('\n');
+	if (n > 98)
+		for (count = n; count > 98; --count)
+			printf("%d, ", count);
+	else
+		for (count = n; count < 98; ++count)
+			printf("%d, ", count);
+	printf("98\n");
 }
