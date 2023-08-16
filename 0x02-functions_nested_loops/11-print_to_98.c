@@ -12,7 +12,7 @@ void print_to_98(int n)
 	int third_digit;
 	int isPositive;
 
-	do
+	while (1)
 	{
 		isPositive = n >= 0;
 		if (isPositive)
@@ -65,6 +65,11 @@ void print_to_98(int n)
 				n--;
 			}
 		}
-	} while (n != 98);
+		else 
+		{
+			break;
+		}
+	}
+
 	_putchar('\n');
 }
