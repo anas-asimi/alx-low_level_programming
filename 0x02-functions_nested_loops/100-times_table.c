@@ -12,39 +12,37 @@ void print_times_table(int n)
 	int y;
 	int z;
 
-	if (n < 0 || n > 15)
+	if (n >= 0 || n <= 15)
 	{
-		return ();
-	}
-
-	for (x = 0; x <= n; x++)
-	{
-		for (y = 0; y <= n; y++)
+		for (x = 0; x <= n; x++)
 		{
-			z = x * y;
-			if (y > 0)
+			for (y = 0; y <= n; y++)
 			{
-				_putchar(',');
-				_putchar(' ');
-				if (z >= 100)
+				z = x * y;
+				if (y > 0)
 				{
-					_putchar(z / 100 + '0');
-				}
-				else
-				{
+					_putchar(',');
 					_putchar(' ');
+					if (z >= 100)
+					{
+						_putchar(z / 100 + '0');
+					}
+					else
+					{
+						_putchar(' ');
+					}
+					if (z >= 10)
+					{
+						_putchar(z / 10 + '0');
+					}
+					else
+					{
+						_putchar(' ');
+					}
 				}
-				if (z >= 10)
-				{
-					_putchar(z / 10 + '0');
-				}
-				else
-				{
-					_putchar(' ');
-				}
+				_putchar(z % 10 + '0');
 			}
-			_putchar(z % 10 + '0');
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
