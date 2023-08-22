@@ -7,7 +7,7 @@
  * Return: Always not.
  */
 
-void Print_array(int *a, int n) /* void */
+void Print_array(int *a, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -18,5 +18,5 @@ void Print_array(int *a, int n) /* void */
 			_putchar(" ");
 		}
 	}
-	printf("\n");
+	_putchar("\n");
 }
