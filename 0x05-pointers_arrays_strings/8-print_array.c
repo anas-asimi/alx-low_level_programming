@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_array - Prints element of array
@@ -7,18 +8,13 @@
  * Return: Always not.
  */
 
-void Print_array(int *a, int n)
+void Print_array(int *a, int n) /* void */
 {
-	int i;
-
-	for (i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
-		_putchar(a[i] + '0');
+		printf("%d", a[i]);
 		if (i < n - 1)
-		{
-			_putchar(44);
-			_putchar(" ");
-		}
+			printf(", ");
 	}
-	_putchar("\n");
+	printf("\n");
 }
