@@ -8,7 +8,7 @@
  * Return: Always not.
  */
 
-void Print_array(int *a, int n) /* void */
+void Print_array(int *a, int n)
 {
 	int i;
 	
