@@ -11,7 +11,7 @@ char *cap_string(char *s)
 
 	if (s[i] >= 'a' && s[i] <= 'z')
 		s[i] = s[i] - 'a' + 'A';
-	
+
 	while (s[i] != '\0')
 	{
 		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' ||
