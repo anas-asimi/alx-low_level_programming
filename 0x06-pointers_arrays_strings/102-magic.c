@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-int main(void) /*void.*/
+/**
+ * print_number - prints an integer using _putchar.
+ * Return: 0.
+ */
+
+int main(void)
 {
 	int n;
 	int a[5];
