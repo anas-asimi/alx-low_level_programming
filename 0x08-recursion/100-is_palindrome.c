@@ -7,15 +7,9 @@
  */
 int str_length(char *s)
 {
-	int length = 0;
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-		length++;
-	}
-	return (length);
+	if (s[0] != '\0')
+		return (1 + str_length(s + 1));
+	return (0);
 }
 
 /**
