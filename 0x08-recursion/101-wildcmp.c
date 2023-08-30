@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * str_checker - check if two strings are identical.
+ * checker - check if two strings are identical.
  * @s1: string_1 base address.
  * @s2: string_2 base address.
  * @i: left index.
@@ -30,5 +30,5 @@ int checker(char *s1, char *s2, int i, int j)
  */
 int wildcmp(char *s1, char *s2)
 {
-	return (str_checker(s1, s2, 0, 0));
+	return (checker(s1, s2, 0, 0));
 }
