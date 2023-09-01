@@ -28,7 +28,6 @@ int main(int argc, char **argv)
 		arg = argv[i];
 		for (j = 0; j < strlen(arg); j++)
 		{
-			printf("we r in : %d\n", arg[j]);
 			if (!isdigit(arg[j]))
 			{
 				printf("Error\n");
