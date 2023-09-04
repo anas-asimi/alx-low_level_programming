@@ -31,7 +31,7 @@ char *argstostr(int ac, char **av)
 		len++;
 	}
 	/* Allocate memory */
-	result = malloc(sizeof(char) * len);
+	result = malloc((sizeof(char) * len) + 1);
 	/* Fill memory */
 	for (i = 0; i < ac; i++)
 	{
