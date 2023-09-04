@@ -24,12 +24,21 @@ char *str_concat(char *s1, char *s2)
 	if (s2 != NULL)
 		while (s2[len2] != '\0')
 			len2++;
+
+	/* allocate memory */
 	result = malloc((sizeof(char) * (len1 + len2)) + 1);
 	if (result == NULL)
 		return (NULL);
-	for (i = 0; i < len1; i++)
-		result[i] = s1[i];
-	for (j = 0; j <= len2; j++, i++)
-		result[i] = s2[j];
+
+	/* copy s1 */
+	if (s1 != NULL)
+		for (i = 0; i < len1; i++)
+			result[i] = s1[i];
+
+	/* copy s2 */
+	if (s2 != NULL)
+		for (j = 0; j <= len2; j++, i++)
+			result[i] = s2[j];
+
 	return (result);
 }
