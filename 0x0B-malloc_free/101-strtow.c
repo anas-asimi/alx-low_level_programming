@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * strtow - splits a string into words.
@@ -12,9 +13,11 @@ char **strtow(char *str)
 {
 	char **array;
 	int j = 0, i = 0, x = 0;
-	int startOfString, endOfstring;
+	int startOfString, endOfstring, length;
 	int totalstrings = 0;
 
+	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
+		return (NULL);
 	while (str[i])
 	{
 		if (str[i] == ' ')
@@ -26,7 +29,7 @@ char **strtow(char *str)
 		while (str[i] != ' ' && str[i])
 			i++;
 	}
-	array = malloc(sizeof(char *) * (totalstrings));
+	array = malloc(sizeof(char *) * (totalstrings + 1));
 	if (array == NULL)
 		return (NULL);
 	i = 0;
@@ -41,13 +44,15 @@ char **strtow(char *str)
 		while (str[i] != ' ' && str[i])
 			i++;
 		endOfstring = i;
-		array[j] = malloc(sizeof(char) * (endOfstring - startOfString + 1));
-		if (array[j] == NULL)
-			return (NULL);
-		for (x = 0; x < endOfstring - startOfString; x++)
+		length = endOfstring - startOfString;
+		array[j] = malloc(sizeof(char) * length + 1);
+		for (x = 0; x < length; x++)
+		{
 			array[j][x] = str[startOfString + x];
-		array[j][endOfstring - startOfString] = '\0';
+		}
+		array[j][length] = '\0';
 		j++;
 	}
+	array[totalstrings] = NULL;
 	return (array);
 }
