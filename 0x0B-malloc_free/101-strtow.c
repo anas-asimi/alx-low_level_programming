@@ -10,48 +10,50 @@
 
 char **strtow(char *str)
 {
-	int j = 0, i = 0;
-	int **array;
-	int numberOfWords = 0;
-	int totalLenght = 0;
-	char string[] = "     123    456 789 ";
+	char **array;
+	int j = 0, i = 0, x = 0;
+	int startOfString, endOfstring;
+	int totalstrings = 0;
 
 	/* calcule number of words and caracters */
-	while (string[i])
+	while (str[i])
 	{
-		printf("checking : %c\n", string[i]);
-		if (string[i] == ' ')
+		if (str[i] == ' ')
 		{
 			i++;
 			continue;
 		}
 
-		numberOfWords++;
-		while (string[i] != ' ' && string[i])
+		totalstrings++;
+		while (str[i] != ' ' && str[i])
 		{
-			totalLenght++;
 			i++;
 		}
 	}
-	printf("found : %d words\n", numberOfWords);
-	printf("lenght : %d\n", totalLenght);
 
 	/* allocate needed memory */
-	array = malloc(sizeof(char) * (numberOfWords + totalLenght));
+	array = malloc(sizeof(char *) * (totalstrings));
 	i = 0;
-	while (string[i])
+	while (str[i])
 	{
-		if (string[i] == ' ')
+		if (str[i] == ' ')
 		{
 			i++;
 			continue;
 		}
-
-		while (string[i] != ' ' && string[i])
+		startOfString = i;
+		while (str[i] != ' ' && str[i])
 		{
-			array[j] = string[i];
-			j++;
 			i++;
 		}
+		endOfstring = i;
+		array[j] = malloc(sizeof(char) * (endOfstring - startOfString + 1));
+		for (x = 0; x < endOfstring - startOfString; x++)
+		{
+			array[j][x] = str[startOfString + x];
+		}
+		array[j][endOfstring - startOfString] = '\0';
+		j++;
 	}
+	return (array);
 }
