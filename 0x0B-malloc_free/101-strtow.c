@@ -15,7 +15,6 @@ char **strtow(char *str)
 	int startOfString, endOfstring;
 	int totalstrings = 0;
 
-	/* calcule number of words and caracters */
 	while (str[i])
 	{
 		if (str[i] == ' ')
@@ -23,15 +22,10 @@ char **strtow(char *str)
 			i++;
 			continue;
 		}
-
 		totalstrings++;
 		while (str[i] != ' ' && str[i])
-		{
 			i++;
-		}
 	}
-
-	/* allocate needed memory */
 	array = malloc(sizeof(char *) * (totalstrings));
 	i = 0;
 	while (str[i])
@@ -43,15 +37,11 @@ char **strtow(char *str)
 		}
 		startOfString = i;
 		while (str[i] != ' ' && str[i])
-		{
 			i++;
-		}
 		endOfstring = i;
 		array[j] = malloc(sizeof(char) * (endOfstring - startOfString + 1));
 		for (x = 0; x < endOfstring - startOfString; x++)
-		{
 			array[j][x] = str[startOfString + x];
-		}
 		array[j][endOfstring - startOfString] = '\0';
 		j++;
 	}
