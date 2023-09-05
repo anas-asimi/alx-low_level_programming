@@ -44,10 +44,7 @@ char **strtow(char *str)
 
 	totalstrings = number_of_words(str);
 	if (totalstrings == 0)
-	{
 		return (NULL);
-	}
-	
 
 	array = malloc(sizeof(char *) * (totalstrings + 1));
 	if (array == NULL)
