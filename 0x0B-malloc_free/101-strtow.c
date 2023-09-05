@@ -12,9 +12,7 @@
 char **strtow(char *str)
 {
 	char **array;
-	int j = 0, i = 0, x = 0;
-	int startOfString, endOfstring, length;
-	int totalstrings = 0;
+	int j = 0, i = 0, x = 0, totalstrings = 0, startOfString, endOfstring, length;
 
 	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
@@ -47,9 +45,7 @@ char **strtow(char *str)
 		length = endOfstring - startOfString;
 		array[j] = malloc(sizeof(char) * length + 1);
 		for (x = 0; x < length; x++)
-		{
 			array[j][x] = str[startOfString + x];
-		}
 		array[j][length] = '\0';
 		j++;
 	}
