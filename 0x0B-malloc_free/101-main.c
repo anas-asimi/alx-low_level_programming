@@ -27,7 +27,7 @@ int main(void)
 {
 	char **tab;
 
-	tab = strtow("\n");
+	tab = strtow("\n  123  456   ");
 	if (tab == NULL)
 	{
 		printf("Failed\n");

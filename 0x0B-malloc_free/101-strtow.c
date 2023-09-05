@@ -3,19 +3,15 @@
 #include <stdio.h>
 
 /**
- * strtow - splits a string into words.
+ * number_of_words - return the number of words in string
  * @str: the string
- *
- * Return: returns a pointer to an array of strings (words)
  */
 
-char **strtow(char *str)
+int number_of_words(char *str)
 {
-	char **array;
-	int j = 0, i = 0, x = 0, totalstrings = 0, startOfString, endOfstring, length;
+	int i = 0;
+	int totalstrings;
 
-	if (str == NULL || str[0] == '\0' || str[0] == '\n' || (str[0] == ' ' && str[1] == '\0'))
-		return (NULL);
 	while (str[i])
 	{
 		if (str[i] == ' ' || str[i] == '\n')
@@ -27,13 +23,33 @@ char **strtow(char *str)
 		while (str[i] != ' ' && str[i])
 			i++;
 	}
+	return (totalstrings);
+}
+
+/**
+ * strtow - splits a string into words.
+ * @str: the string
+ *
+ * Return: returns a pointer to an array of strings (words)
+ */
+
+char **strtow(char *str)
+{
+	char **array;
+	int j = 0, i = 0, x = 0, totalstrings = 0, startOfString, endOfstring, length;
+
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
+
+	totalstrings = number_of_words(str);
+
 	array = malloc(sizeof(char *) * (totalstrings + 1));
 	if (array == NULL)
 		return (NULL);
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' || str[i] == '\n')
 		{
 			i++;
 			continue;
