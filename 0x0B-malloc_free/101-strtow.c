@@ -14,11 +14,11 @@ char **strtow(char *str)
 	char **array;
 	int j = 0, i = 0, x = 0, totalstrings = 0, startOfString, endOfstring, length;
 
-	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
+	if (str == NULL || str[0] == '\0' || str[0] == '\n' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
 	while (str[i])
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' || str[i] == '\n')
 		{
 			i++;
 			continue;
