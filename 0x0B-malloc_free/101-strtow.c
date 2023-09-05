@@ -27,6 +27,8 @@ char **strtow(char *str)
 			i++;
 	}
 	array = malloc(sizeof(char *) * (totalstrings));
+	if (array == NULL)
+		return (1);
 	i = 0;
 	while (str[i])
 	{
@@ -40,6 +42,8 @@ char **strtow(char *str)
 			i++;
 		endOfstring = i;
 		array[j] = malloc(sizeof(char) * (endOfstring - startOfString + 1));
+		if (array[j]== NULL)
+			return (1);
 		for (x = 0; x < endOfstring - startOfString; x++)
 			array[j][x] = str[startOfString + x];
 		array[j][endOfstring - startOfString] = '\0';
