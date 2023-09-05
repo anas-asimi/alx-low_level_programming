@@ -5,6 +5,7 @@
 /**
  * number_of_words - return the number of words in string
  * @str: the string
+ * Return: number of words in string
  */
 
 int number_of_words(char *str)
