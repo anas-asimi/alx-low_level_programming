@@ -42,7 +42,7 @@ char **strtow(char *str)
 			i++;
 		endOfstring = i;
 		array[j] = malloc(sizeof(char) * (endOfstring - startOfString + 1));
-		if (array[j]== NULL)
+		if (array[j] == NULL)
 			return (NULL);
 		for (x = 0; x < endOfstring - startOfString; x++)
 			array[j][x] = str[startOfString + x];
