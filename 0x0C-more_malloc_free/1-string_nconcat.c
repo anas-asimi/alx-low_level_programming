@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -34,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < n; i++)
 		s[i + len1] = s2[i];
 
-	s[len1 + len2] = '\0';
+	s[len1 + n] = '\0';
 
 	return (s);
 }
