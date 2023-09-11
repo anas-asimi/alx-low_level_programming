@@ -1,4 +1,4 @@
-#ifndef _somthing_
+#ifndef ABS
 
 #define ABS(x) ((x) < 0 ? (-(x)) : (x)) 
 
