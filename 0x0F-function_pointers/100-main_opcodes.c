@@ -20,8 +20,8 @@ void print_operation_codes(char *a, int n)
 
 /**
  * main - prints the print operation codes of its own main function
- * @argc: 
- * @argv: 
+ * @argc: number of arguments passed to the function
+ * @argv: array of pointers to arguments
  *
  * Return: always O
  */
