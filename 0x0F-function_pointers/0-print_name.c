@@ -3,7 +3,7 @@
  * @name: name given
  * @f: function of name
  *
- * Return: Always 0.
+ * Return: void.
  */
 
 void print_name(char *name, void (*f)(char *))
