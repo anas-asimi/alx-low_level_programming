@@ -57,7 +57,7 @@ void print_all(const char * const format, ...)
 	const char s_arg[] = "cifs";
 
 	va_start(print_all, format);
-	while (format && format[x])
+	while (format != NULL && format[x] != '\0')
 	{
 		y = 0;
 		while (s_arg[y])
