@@ -81,7 +81,11 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				put = va_arg(print_all, char*), e = 1;
-
+				if (!put)
+				{
+					printf("(nil)");
+					break;
+				}
 				printf("%s", put);
 				break;
 		} x++;
